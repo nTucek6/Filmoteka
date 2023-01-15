@@ -41,8 +41,8 @@ echo '</div>';
 ?>
 
 <div class="d-flex justify-content-center">
-<?php previous_posts_link("<button class='btn btn-secondary m-1'>Previous</button>");  ?>
-<?php next_posts_link("<button class='btn btn-secondary m-1'>Next</button>");  ?>
+<?php //previous_posts_link("<button class='btn btn-secondary m-1'>Previous</button>");  ?>
+<?php //next_posts_link("<button class='btn btn-secondary m-1'>Next</button>");  ?>
 </div>
 </main>
 <?php

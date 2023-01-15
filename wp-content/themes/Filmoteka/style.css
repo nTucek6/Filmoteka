@@ -9,49 +9,6 @@ Text Domain: vuv
 */
 
 
-/* slider */
-
-.movies_slider_frontpage
-{
-    background-color: aliceblue;
-    height: 280px;
-}
-
-.movies_slider{
-    background-color: aliceblue;
-    height: 280px;
-   
-}
-
-
-
-.swiper-slide{
-    /*background-color: #f0f0f0; */
-    width: 150px;
-    height: 200px;
-    margin-top: 1%;
-}
- 
-
-.img_box{
-    max-height: 100%;
-    max-width: 100%; 
-    opacity: 1;
-    }
-
-.img_box:hover
-{
-    opacity: 0.6;
-}
-   
-/* slider */
-
-
-.Navigation{
-    font-family: Garamond;
-}
-
-
 
     /*Dropdown Css*/
 .dropdown:hover > .dropdown-menu {

@@ -64,12 +64,14 @@ function GetFilmoviContent()
                 $html .='<div class="swiper-slide">';
                 $html .='<div class="img_box d-flex justify-content-center">';
                 $html .='<a href="'.$movie->guid.'"><img src="'.get_the_post_thumbnail_url($movie->ID).'" style="width:150px;height;250px"/> </a>';
-                $html .='</div></div>';
+                $html .='</div>';
+                $html .= '<p class=" d-flex justify-content-center">'.$movie->post_title.'</p>';
+                $html .='</div>';
       
               }
             }
             
-            $html.= '</div><div class="swiper-pagination"></div></div></div>';
+            $html.= '</div><div class="swiper-pagination spagination"></div></div></div>';
 
     }
 

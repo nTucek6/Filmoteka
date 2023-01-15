@@ -32,6 +32,8 @@ include 'functions/PageFilmoviGenres/get-all-term-movies.php'; //include page Fi
 
 include 'functions/SearchMovies/search-movies.php'; //include funckiju za pretragu filmova
 
+include 'functions/GetMovieCMB/movies-cmb.php'; // Dohvacanje dodatnih informacija filma;
+
 /* ======================= Includes ======================= */
 
 
@@ -55,6 +57,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 function ucitaj_glavni_css()
 {
 wp_enqueue_style( 'glavni-css', get_template_directory_uri() . '/style.css' );
+wp_enqueue_style( 'sporedni-css', get_template_directory_uri() . '/css/main.css' );
 wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/plugins/BootstrapV4.6.0/css/bootstrap.min.css' );
 //wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/plugins/BootstrapV5.0.2/css/bootstrap.min.css' );
 }

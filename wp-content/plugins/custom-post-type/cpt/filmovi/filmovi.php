@@ -62,6 +62,7 @@ function register_movie_cpt() {
 /* ======================= Include custom meta box ======================= */
     include 'custom-meta-box/cmb-movies-info.php';
     include 'custom-meta-box/cmb-movies-awards.php';
+    include 'custom-meta-box/cmb-movies-actors.php';
 /* ======================= Include custom meta box ======================= */
 
 ?>

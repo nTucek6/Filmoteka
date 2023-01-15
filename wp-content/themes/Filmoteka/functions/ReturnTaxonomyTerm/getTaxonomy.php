@@ -12,6 +12,7 @@ if(sizeof($terms)>0)
 function return_term($post,$taxonomy)
 {
 $terms = wp_get_post_terms( $post->ID, $taxonomy );
+
 $term = "";
 if(sizeof($terms)>0)
 {
@@ -20,11 +21,11 @@ if(sizeof($terms)>0)
  {
     if(sizeof($terms) != $count)
     {
-        $term .= $tName->name . ", ";
+        $term .= '<a href="'.get_term_link($tName->slug,$tName->taxonomy).'">'.$tName->name ."</a>".", ";
     }
     else
     {
-        $term .= $tName->name;
+        $term .= '<a href="'.get_term_link($tName->slug,$tName->taxonomy).'">'.$tName->name ."</a>";
     }
     $count =$count + 1;
     

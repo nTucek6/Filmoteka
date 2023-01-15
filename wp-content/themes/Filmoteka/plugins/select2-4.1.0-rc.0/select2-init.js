@@ -1,5 +1,15 @@
 jQuery(function($){
-    $(".js-example-basic-multiple").select2(
-      {placeholder: "Odaberite nagrade:",
+    $(".awards-movies").select2(
+      {
+       placeholder: "Odaberite nagrade:",
+       closeOnSelect: false});
+  });
+  
+  
+  jQuery(function($){
+    $(".actors-movies").select2(
+      {
+       placeholder: "Odaberite glumce:",
        closeOnSelect: false});
   }); 
+

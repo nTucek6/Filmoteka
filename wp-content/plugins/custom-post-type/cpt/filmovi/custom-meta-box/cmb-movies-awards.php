@@ -14,7 +14,7 @@ $awards = get_post_meta($post->ID, 'awards', true);
 
 echo '
 <div>
-<select class="js-example-basic-multiple" multiple="multiple" style="width: 75%" name="awards[]" id="awards">';
+<select class="js-example-basic-multiple awards-movies" multiple="multiple" style="width: 75%" name="awards[]" id="awards">';
     echo GetAwards($awards); 
     echo ' </select>
     </div>
@@ -27,10 +27,10 @@ function save_movie_awards($post_id)
 $is_autosave = wp_is_post_autosave( $post_id );
 $is_revision = wp_is_post_revision( $post_id );
 
-$is_valid_nonce_relaseDate = ( isset( $_POST[ 'awards_nonce' ] ) && wp_verify_nonce(
+$is_valid_nonce_awards = ( isset( $_POST[ 'awards_nonce' ] ) && wp_verify_nonce(
 $_POST[ 'awards_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
 
-if ( $is_autosave || $is_revision || !$is_valid_nonce_relaseDate ) 
+if ( $is_autosave || $is_revision || !$is_valid_nonce_awards ) 
 {return;}
 
 
