@@ -34,6 +34,12 @@ include 'functions/SearchMovies/search-movies.php'; //include funckiju za pretra
 
 include 'functions/GetMovieCMB/movies-cmb.php'; // Dohvacanje dodatnih informacija filma;
 
+include 'functions/GetActorCMB/actors-cmb.php'; // Dohvacanje dodatnih informacija glumaca;
+
+include 'functions/GetRewardsCMB/rewards-cmb.php'; // Dohvacanje dodatnih informacija nagrada;
+
+
+
 /* ======================= Includes ======================= */
 
 

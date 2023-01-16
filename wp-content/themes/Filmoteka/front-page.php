@@ -40,7 +40,7 @@ echo '</div>';
 }
 ?>
 
-<div class="mt-4">
+<div class="mt-4 ml-2 mr-2">
 <h3>Najnoviji filmovi</h3>
 <hr/>
 <div class="swiper movies_slider_frontpage">

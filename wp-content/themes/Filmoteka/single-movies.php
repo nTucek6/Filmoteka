@@ -11,6 +11,8 @@ the_post();
 
 $movieInfo = GetMovieInfo($post);
 
+$stringRewards = GetRewardInfo($post);
+
 if(!empty($movieInfo->actors))
 {
     $stringGlumci = GetMovieActors($movieInfo->actors);
@@ -36,6 +38,13 @@ echo '<p>Direktor: '. $movieInfo->director.'</p>'; //dodaj funckiciju da nade di
 echo '<hr class="single-hr">';
 
 echo 'Glumci: '.$stringGlumci;
+
+if(!empty($stringRewards))
+{
+    echo '<hr class="single-hr">';
+
+echo 'Nagrade: '.$stringRewards;
+}
 
 echo '</div>';
 }
