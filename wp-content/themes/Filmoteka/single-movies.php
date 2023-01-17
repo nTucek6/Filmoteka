@@ -9,9 +9,11 @@ while ( have_posts() )
 {
 the_post();
 
+
 $movieInfo = GetMovieInfo($post);
 
 $stringRewards = GetRewardInfo($post);
+
 
 if(!empty($movieInfo->actors))
 {
@@ -48,13 +50,39 @@ echo 'Nagrade: '.$stringRewards;
 
 echo '</div>';
 }
-
 }
 ?>
+
+<div id="addBtnBorrow" class="mt-3 container"></div>
+
 <div class="d-flex justify-content-center">
 <?php //previous_post_link( '%link', "<button class='btn btn-secondary m-1'>Previous post</button>", true ); ?>
 <?php //next_post_link( '%link', "<button class='btn btn-secondary m-1'>Next post</button>", true ); ?>
 </div>
+
+<?php
+
+if(get_current_user_id() != 0)
+{
+    echo '<script>
+    jQuery(function($) {
+      SetValues('.get_current_user_id().' ,'.$post->ID.',"'.home_url()."/wp-admin/admin-ajax.php" .'");
+    });
+    </script>';
+
+ echo '<script>
+ jQuery(function($) {
+   GetButton();
+ });
+ 
+ </script>';
+
+}
+
+?>
+
+
+
 </main>
 <?php
 get_footer();

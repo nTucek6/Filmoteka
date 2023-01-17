@@ -38,6 +38,8 @@ include 'functions/GetActorCMB/actors-cmb.php'; // Dohvacanje dodatnih informaci
 
 include 'functions/GetRewardsCMB/rewards-cmb.php'; // Dohvacanje dodatnih informacija nagrada;
 
+include 'functions/BorrowMovies/borrow-movie.php'; // Funckije za posudivaje filma
+
 
 
 /* ======================= Includes ======================= */
@@ -93,5 +95,53 @@ function ucitaj_Swiper()
     wp_enqueue_script('swiper-js', get_template_directory_uri().'/plugins/swiper-8.4.5/js/swiper-bundle.min.js','8.4.5',true); 
 }
 add_action( 'wp_enqueue_scripts', 'ucitaj_Swiper',1);
+
+
+/* ======================= provjera login ======================= */
+
+function GetLoginNav()
+{
+$html = "";
+if(get_current_user_id() == 0)
+{
+    $html .= '<ul id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+    <li class="menu-item menu-item-type-post_type_archive menu-item-object-rewards nav-item"><a itemprop="url" href="http://localhost/Filmoteka/login/" class="nav-link"><span itemprop="name">Prijava</span></a></li>
+    </ul>';
+}
+else
+{
+  /*  $html .= '<ul id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+    <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item"><a itemprop="url" href="http://localhost/Filmoteka/user/" class="nav-link"><span itemprop="name">Profil</span></a></li>
+    <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item"><a itemprop="url" href="http://localhost/Filmoteka/logout/" class="nav-link"><span itemprop="name">Odjava</span></a></li>
+    </ul>'; */
+
+    $html .= '<ul id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+    <li id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end menu-item-has-children dropdown menu-item-navigacija nav-item">
+<a href="http://localhost/Filmoteka/user/" data-hover="dropdown" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-78">
+<span itemprop="name">Profil</span>
+</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-78">
+	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-movies menu-item-17 nav-item">
+    <a itemprop="url" href="http://localhost/Filmoteka/loans/" class="dropdown-item"><span itemprop="name">Posudbe</span></a></li>
+    <li id="menu-item-17" class=""menu-item menu-item-type-custom_type_archive menu-item-object-movies menu-item-17 nav-item">
+    <a itemprop="url" href="http://localhost/Filmoteka/logout/" class="dropdown-item"><span itemprop="name">Odjava</span></a></li> </ul>
+
+</ul>
+</li>';
+
+}
+return $html;
+}
+
+/* ======================= provjera login ======================= */
+
+
+
+
+
+
+
+
+
 
 ?>

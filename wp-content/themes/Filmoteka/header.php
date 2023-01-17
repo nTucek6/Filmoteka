@@ -46,9 +46,13 @@
             'walker'            => new WP_Bootstrap_Navwalker(),
         ) );
 
-        get_search_form()
+        get_search_form();
+
+
+      
         ?>
     </div>
+    <?php   echo GetLoginNav(); ?>
 </nav>
 
 <?php
