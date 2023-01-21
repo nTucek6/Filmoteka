@@ -39,7 +39,6 @@ jQuery(function($) {
   });
 });
 
-
 var user_id = 0;
 var movie_id = 0;
 var link = "";
@@ -93,12 +92,67 @@ function RentMovie()
   success:function(results){
     location.reload(); 
   }
-  });
-
-  
-  
+  }); 
 }
 
+function ReturnMovie(user_id,movie_id,ajaxLink)
+{
+  jQuery.ajax({
+    type:"POST",
+    url: ajaxLink, 
+    data: {
+          action:"ReturnMovie",
+          user_id :user_id,
+          movie_id:movie_id
+        },
+    
+    success:function(results){
+    location.reload();
+    }
+    });
+
+}
+
+function SearchTableAdmin(ajaxLink)
+{
+  var search = jQuery("#search").val();
+  var table = jQuery("#tableBody");
+
+ 
+    jQuery.ajax({
+      type:"POST",
+      url: ajaxLink, 
+      data: {
+            action:"SearchTableAdmin",
+            search :search,
+          }, 
+      success:function(results){
+         table.empty();
+         table.append(results);
+      }
+      }); 
+}
+
+
+function SearchTableUser(ajaxLink,user)
+{
+  var search = jQuery("#search").val();
+  var table = jQuery("#tableBody");
+
+    jQuery.ajax({
+      type:"POST",
+      url: ajaxLink, 
+      data: {
+            action:"SearchTableUser",
+            search :search,
+            user_id:user
+          }, 
+      success:function(results){
+         table.empty();
+         table.append(results);
+      }
+      }); 
+}
 
 
 

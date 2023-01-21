@@ -20,19 +20,16 @@ if(false)
 ?>
 <?php
 
-if ( have_posts() )
+if(is_admin_user())
 {
-while ( have_posts() )
+echo GetBorrowedMovies();
+}
+else
 {
-the_post();
-
-echo the_content();
-
+  echo GetUserMovies();
 }
-}
+
 ?>
-
-
 
 
 </div>

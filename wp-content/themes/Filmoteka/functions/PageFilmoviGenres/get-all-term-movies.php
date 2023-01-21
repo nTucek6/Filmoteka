@@ -10,24 +10,10 @@ function GetFilmoviContent()
     
     $terms = get_terms('genres', $genres_args);
 
-    //var_dump($terms);
-
     $html = "";
 
     foreach($terms as $genre)
     {
-     /*   $args = array(
-            'posts_per_page' => -1,
-            'post_type' => 'movies',
-            'post_status' => 'publish',
-            'tax_query' => array(
-            array(
-            'taxonomy' =>  $genre->taxonomy,
-            'field' => 'slug',
-            'terms' => $genre->slug
-            )
-            )); */
-
             $args = array(
               'numberposts' => 5,
               'post_type'   => 'movies',
@@ -63,9 +49,10 @@ function GetFilmoviContent()
               {
                 $html .='<div class="swiper-slide">';
                 $html .='<div class="img_box d-flex justify-content-center">';
-                $html .='<a href="'.$movie->guid.'"><img src="'.get_the_post_thumbnail_url($movie->ID).'" style="width:150px;height;250px"/> </a>';
+                $html .='<a href="'.$movie->guid.'"><img src="'.get_the_post_thumbnail_url($movie->ID).'" style="width:150px;height;250px"/>
+                 <p class=" d-flex justify-content-center">'.$movie->post_title.'</p> </a>';
                 $html .='</div>';
-                $html .= '<p class=" d-flex justify-content-center">'.$movie->post_title.'</p>';
+               // $html .= '<p class=" d-flex justify-content-center">'.$movie->post_title.'</p>';
                 $html .='</div>';
       
               }

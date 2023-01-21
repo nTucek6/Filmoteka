@@ -38,7 +38,11 @@ include 'functions/GetActorCMB/actors-cmb.php'; // Dohvacanje dodatnih informaci
 
 include 'functions/GetRewardsCMB/rewards-cmb.php'; // Dohvacanje dodatnih informacija nagrada;
 
-include 'functions/BorrowMovies/borrow-movie.php'; // Funckije za posudivaje filma
+include 'functions/AjaxMovies/ajax-movie.php'; // Funckije za posudivaje filma
+
+include 'functions/BorrowedMovies/find-borrowed-movies.php'; //Funckija vraca posuden filmove korisnika i admin tablicu
+
+include 'functions/GetAllGenres/get-all-genres.php'; //Funckija vraca posuden filmove korisnika i admin tablicu
 
 
 
@@ -97,6 +101,14 @@ function ucitaj_Swiper()
 add_action( 'wp_enqueue_scripts', 'ucitaj_Swiper',1);
 
 
+/*function ucitaj_MDB()
+{
+    wp_enqueue_script('mdb-js', get_template_directory_uri().'/plugins/MDB/css/mdb.lite.min.css','4.20.0',true);
+    wp_enqueue_script('mdb-js', get_template_directory_uri().'/plugins/MDB/js/mdb.min.js','4.20.0',true);
+    wp_enqueue_script('popper-js', get_template_directory_uri().'/plugins/MDB/js/popper.min.js',true);  
+}
+add_action( 'wp_enqueue_scripts', 'ucitaj_MDB',1); */
+
 /* ======================= provjera login ======================= */
 
 function GetLoginNav()
@@ -110,11 +122,6 @@ if(get_current_user_id() == 0)
 }
 else
 {
-  /*  $html .= '<ul id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
-    <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item"><a itemprop="url" href="http://localhost/Filmoteka/user/" class="nav-link"><span itemprop="name">Profil</span></a></li>
-    <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item"><a itemprop="url" href="http://localhost/Filmoteka/logout/" class="nav-link"><span itemprop="name">Odjava</span></a></li>
-    </ul>'; */
-
     $html .= '<ul id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
     <li id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end menu-item-has-children dropdown menu-item-navigacija nav-item">
 <a href="http://localhost/Filmoteka/user/" data-hover="dropdown" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-78">
@@ -124,7 +131,7 @@ else
 	<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-movies menu-item-17 nav-item">
     <a itemprop="url" href="http://localhost/Filmoteka/loans/" class="dropdown-item"><span itemprop="name">Posudbe</span></a></li>
     <li id="menu-item-17" class=""menu-item menu-item-type-custom_type_archive menu-item-object-movies menu-item-17 nav-item">
-    <a itemprop="url" href="http://localhost/Filmoteka/logout/" class="dropdown-item"><span itemprop="name">Odjava</span></a></li> </ul>
+    <a itemprop="url" href="http://localhost/Filmoteka/logout/" class="dropdown-item text-danger"><span itemprop="name">Odjava</span></a></li> </ul>
 
 </ul>
 </li>';
@@ -138,7 +145,9 @@ return $html;
 
 
 
-
+function is_admin_user() {
+    return current_user_can( 'manage_options' );
+}
 
 
 

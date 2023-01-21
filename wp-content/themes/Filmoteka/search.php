@@ -12,19 +12,20 @@ $movies = SearchMovies($search);
 <h1>Rezultati pretrage: </h1>
 
 <?php
-
-if(count($movies) > 0)
+if(!empty($movies))
 {
-    echo '<div >';
-    foreach($movies as $movie)
+    if(count($movies) > 0)
     {
-    echo '<div class=" d-flex justify-content-center">';
-    echo '<a href="'.$movie->guid.'">'.$movie->post_title.'</a>';
-    echo '</div>';
+        echo '<div >';
+        foreach($movies as $movie)
+        {
+        echo '<div class=" d-flex justify-content-center">';
+        echo '<a href="'.$movie->guid.'">'.$movie->post_title.'</a>';
+        echo '</div>';
+        }
+        echo '</div>';
     }
-    echo '</div>';
 }
-
 ?>
 
 </div>
