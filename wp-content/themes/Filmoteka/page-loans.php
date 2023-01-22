@@ -30,8 +30,16 @@ else
 }
 
 ?>
-
-
 </div>
+
+<?php
+
+echo '<script>
+    jQuery(function($) {
+        FancyTable();
+    });
+    </script>';
+
+?>
 
 <?php get_footer(); ?>

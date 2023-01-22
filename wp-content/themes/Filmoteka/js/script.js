@@ -155,6 +155,18 @@ function SearchTableUser(ajaxLink,user)
 }
 
 
+function FancyTable()
+{
+		jQuery("#tableData").fancyTable({
+			sortColumn:0,
+			pagination: true,
+			perPage:5,
+			globalSearch:true,
+      searchable: false
+    });		
+}
+
+
 
 
 

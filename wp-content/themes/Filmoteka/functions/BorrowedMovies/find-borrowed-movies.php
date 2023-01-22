@@ -6,8 +6,8 @@ function GetUserMovies()
     $borrowed_movies = $wpdb->prefix."borrowed_movies";
     $result = $wpdb->get_results("Select * from ".$borrowed_movies. " where user_id=".get_current_user_id()."  ORDER BY borrow_date ASC");
 
-    $html = '<div id="tableData" class="container mt-3"><input id="search" type="text" class="form-control" placeholder="Pretraži..." onkeyup=SearchTableUser("'.$link.'",'.get_current_user_id().') /></div>'; 
-    $html .= '<table class="table table-light container mt-3">';
+    $html = '<div class="container mt-3"><input id="search" type="text" class="form-control" placeholder="Pretraži..." onkeyup=SearchTableUser("'.$link.'",'.get_current_user_id().') /></div>'; 
+    $html .= '<table class="table table-light container mt-3" id="tableData" >';
     $html .= '<thead class="thead-light"> 
             <tr>
             <th>Rbr.</th>
@@ -56,8 +56,8 @@ function GetBorrowedMovies()
    $result = $wpdb->get_results("Select * from ".$borrowed_movies.' ORDER BY borrow_date ASC');
    $link = home_url().'/wp-admin/admin-ajax.php';
 
-   $html = '<div id="tableData" class="container mt-3"><input id="search" type="text" class="form-control" placeholder="Pretraži..." onkeyup=SearchTableAdmin("'.$link.'") /></div>'; 
-   $html .= '<table class="table table-light table-hover container mt-3">';
+   $html = '<div  class="container mt-3"><input id="search" type="text" class="form-control" placeholder="Pretraži..." onkeyup=SearchTableAdmin("'.$link.'") /></div>'; 
+   $html .= '<table id="tableData" class="table table-light table-hover container mt-3">';
    $html .= '<thead class="thead-light"> 
            <tr>
            <th>Rbr.</th>

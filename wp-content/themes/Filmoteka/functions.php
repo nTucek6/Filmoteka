@@ -101,6 +101,12 @@ function ucitaj_Swiper()
 add_action( 'wp_enqueue_scripts', 'ucitaj_Swiper',1);
 
 
+function ucitaj_fancyTable()
+{
+    wp_enqueue_script('fancyTable-js', get_template_directory_uri().'/plugins/jquery.fancyTable/js/fancyTable.min.js','1.0.33',true); 
+}
+add_action( 'wp_enqueue_scripts', 'ucitaj_fancyTable',1);
+
 /*function ucitaj_MDB()
 {
     wp_enqueue_script('mdb-js', get_template_directory_uri().'/plugins/MDB/css/mdb.lite.min.css','4.20.0',true);
