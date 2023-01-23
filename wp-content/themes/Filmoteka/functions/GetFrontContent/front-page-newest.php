@@ -26,11 +26,10 @@ function GetContent()
         foreach($movies as $movie)
         {
           $html .='<div class="swiper-slide">';
-          $html .='<div class="img_box d-flex justify-content-center">';
+          $html .='<div class="img_box d-flex justify-content-center card" style="background-color:#2e2e2c;">';
           $html .='<a href="'.$movie->guid.'"><img src="'.get_the_post_thumbnail_url($movie->ID).'" />
-          <p class=" d-flex justify-content-center">'.$movie->post_title.'</p> </a>'; //style="width:150px;height;250px"
+          <p class=" d-flex justify-content-center"><small>'.$movie->post_title.'</small></p> </a>'; 
           $html .='</div>';
-        //  $html .= '<p class=" d-flex justify-content-center">'.$movie->post_title.'</p>';
           $html .='</div>';
 
         }

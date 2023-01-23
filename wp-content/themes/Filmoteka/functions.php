@@ -44,6 +44,7 @@ include 'functions/BorrowedMovies/find-borrowed-movies.php'; //Funckija vraca po
 
 include 'functions/GetAllGenres/get-all-genres.php'; //Funckija vraca posuden filmove korisnika i admin tablicu
 
+include 'functions/GetRewardArchive/reward.php'; //Funckija vraca archive reward sortirano
 
 
 /* ======================= Includes ======================= */
@@ -107,13 +108,6 @@ function ucitaj_fancyTable()
 }
 add_action( 'wp_enqueue_scripts', 'ucitaj_fancyTable',1);
 
-/*function ucitaj_MDB()
-{
-    wp_enqueue_script('mdb-js', get_template_directory_uri().'/plugins/MDB/css/mdb.lite.min.css','4.20.0',true);
-    wp_enqueue_script('mdb-js', get_template_directory_uri().'/plugins/MDB/js/mdb.min.js','4.20.0',true);
-    wp_enqueue_script('popper-js', get_template_directory_uri().'/plugins/MDB/js/popper.min.js',true);  
-}
-add_action( 'wp_enqueue_scripts', 'ucitaj_MDB',1); */
 
 /* ======================= provjera login ======================= */
 

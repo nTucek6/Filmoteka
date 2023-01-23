@@ -70,32 +70,84 @@ background-color: darkred;
 /* slider */
 
 
-
+/* if screen size is bigger than 500 px */
+@media only screen and (min-device-width: 500px) {
 .movies_slider_frontpage
 {
     height: 350px;
     background-color:#141413;
 }
-
-
-.movies_slider
-{
-    height: 350px;
-    background-color: #141413; 
 }
+
+@media only screen and (max-device-width: 500px) {
+    .movies_slider_frontpage
+    {
+        height: 250px;
+        background-color:#141413;
+    }
+}
+
+
+@media only screen and (min-device-width: 500px) {
+    .movies_slider
+    {
+        height: 350px;
+        background-color: #141413; 
+    }
+    }
+    
+    @media only screen and (max-device-width: 500px) {
+        .movies_slider
+        {
+            height: 250px;
+            background-color: #141413; 
+        }
+    }
 
 
 .swiper-slide
 {
-    margin-top: 10px;
+    width: fit-content;
 }
 
+.img_box{
+    width: 100%;
+    height: 80%;
+   
+}
 
+@media only screen and (min-device-width: 500px) {
 .img_box > a > img
 {
+ 
     height: 200px;
-    width: 150px;
+    width: 100%;
+    background-size: 100% 100%;
+    object-fit: scale-down;
+    margin-top: 15px;
+   
 }
+}
+
+@media only screen and (max-device-width: 500px) {
+    .img_box > a > img
+    {
+     
+        height: 100px;
+        width: 100%;
+        background-size: 100% 100%;
+        object-fit: scale-down;
+       
+    }
+    }
+
+    .img_box > a > p 
+    {
+        display: inline;
+    }
+
+
+   /* slider */ 
 
 
 .single-hr
@@ -108,3 +160,8 @@ background-color: darkred;
     color:black;
 }
 
+
+.rewardHR
+{
+    border-top: 1px solid white;
+}

@@ -54,6 +54,7 @@ function register_reward_cpt() {
 
 
 /* ======================= Include taxonomy ======================= */
+    include 'taxonomy/award-type.php';
 
 /* ======================= Include taxonomy ======================= */
 

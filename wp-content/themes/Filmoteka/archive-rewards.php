@@ -22,6 +22,7 @@ if(true)
 
 <main>
 <?php
+/*
 if ( have_posts() )
 {
 
@@ -32,8 +33,10 @@ echo '<div class="">';
 echo '<a class="text-center" href="'.$post->guid.'"><h4>'.$post->post_title . '</h4></a>';
 echo '</div>';
 }
+} */
 
-}
+echo GetAwardContent();
+
 ?>
 
 <div class="d-flex justify-content-center">
