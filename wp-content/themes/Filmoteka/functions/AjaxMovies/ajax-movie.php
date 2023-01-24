@@ -36,6 +36,10 @@ function BorrowMovie()
 
     $borrowed_movies=$wpdb->prefix.'borrowed_movies';
 
+    date_default_timezone_set('Europe/Zagreb');
+
+    
+
     $data=array(
         'user_id' => $user_id, 
         'movie_id' => $movie_id,

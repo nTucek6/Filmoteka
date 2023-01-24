@@ -30,8 +30,8 @@ while ( have_posts() )
 {
 the_post();
 echo '<div class="col">';
-echo '<div class="d-flex justify-content-center mb-1"><img height="300" width="200" src="'.get_the_post_thumbnail_url().'"/></div>';
-echo '<a class="text-center" href="'.$post->guid.'"><h4>'.$post->post_title . '</h4></a>';
+echo '<div class="mb-4"><a href="'.$post->guid.'"><div class="d-flex justify-content-center mb-1"><img height="300" width="200" src="'.get_the_post_thumbnail_url().'"/></div>';
+echo '<h4 class="text-center">'.$post->post_title .'</h4></a></div>';
 
 echo '</div>';
 }

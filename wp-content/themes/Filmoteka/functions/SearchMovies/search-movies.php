@@ -35,6 +35,21 @@ function SearchMovies($search)
                 array_push($searchResult,$actor);
             }
         }
+        
+        $args = array(
+            'posts_per_page' => -1,
+            'post_type' => 'rewards',
+            'post_status' => 'publish');
+    
+        $rewards = get_posts($args);
+    
+        foreach($rewards as $reward)
+        {
+            if(str_contains(strtolower($reward->post_title),strtolower($search)))
+            {
+                array_push($searchResult,$reward);
+            }
+        }
       
         return $searchResult;
     }
@@ -42,9 +57,7 @@ function SearchMovies($search)
     {
         return null;
     }
-   
 }
-
 
 
 ?>

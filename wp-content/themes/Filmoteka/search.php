@@ -3,24 +3,24 @@ get_header();
 
 
 $search = get_query_var("s");
-$movies = SearchMovies($search);
+$results = SearchMovies($search);
 
 ?>
 
-<div class="container">
+<div class="container mt-3">
 
-<h1>Rezultati pretrage: </h1>
+<h1>Rezultati pretrage: <?php echo $search ?></h1>
 
 <?php
-if(!empty($movies))
+if(!empty($results))
 {
-    if(count($movies) > 0)
+    if(count($results) > 0)
     {
-        echo '<div >';
-        foreach($movies as $movie)
+        echo '<div class="mt-3">';
+        foreach($results as $result)
         {
-        echo '<div class=" d-flex justify-content-center">';
-        echo '<a href="'.$movie->guid.'">'.$movie->post_title.'</a>';
+        echo '<div class="d-flex justify-content-center mb-2">';
+        echo '<a href="'.$result->guid.'">'.$result->post_title.'</a>';
         echo '</div>';
         }
         echo '</div>';

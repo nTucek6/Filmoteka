@@ -74,7 +74,7 @@ background-color: darkred;
 @media only screen and (min-device-width: 500px) {
 .movies_slider_frontpage
 {
-    height: 350px;
+    height: 300px;
     background-color:#141413;
 }
 }
@@ -91,7 +91,7 @@ background-color: darkred;
 @media only screen and (min-device-width: 500px) {
     .movies_slider
     {
-        height: 350px;
+        height: 300px;
         background-color: #141413; 
     }
     }

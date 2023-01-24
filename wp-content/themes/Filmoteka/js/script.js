@@ -162,7 +162,7 @@ function FancyTable()
 			pagination: true,
 			perPage:5,
 			globalSearch:true,
-      searchable: false
+      searchable: true
     });		
 }
 
