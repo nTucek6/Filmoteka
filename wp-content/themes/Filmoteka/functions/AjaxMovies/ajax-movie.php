@@ -193,5 +193,70 @@ add_action('wp_ajax_SearchTableUser', 'SearchTableUser');
 add_action('wp_ajax_nopriv_SearchTableUser', 'SearchTableUser');
 
 
+function GetUserLoans()
+{
+    global $wpdb;
+
+    $user_id = $_POST['user_id'];
+
+    $link = home_url().'/wp-admin/admin-ajax.php';
+
+    $borrowed_movies = $wpdb->prefix."borrowed_movies";
+    $result = $wpdb->get_results("Select * from ".$borrowed_movies. " where user_id= ".$user_id);
+
+    $user = get_user_by('ID', $user_id);
+
+    echo '<div class="container mt-3">Korisnik: '.$user->display_name.'</div>';
+
+    $html .= '<table id="tableData" class="table table-light table-hover container mt-3">';
+    $html .= '<thead class="thead-light"> 
+            <tr>
+            <th>Rbr.</th>
+            <th>Naziv filma</th>
+            <th>Datum posudbe</th>
+            <th>Vrati film</th>
+            </tr>
+            </thead>';
+ 
+    $c = 1;
+
+    
+    $html .='<tbody id="tableBody">';
+    foreach($result as $movie)
+    {
+        $post = get_post( $movie->movie_id );
+        $user = get_user_by("id",$movie->user_id);
+     
+        $timestamp = strtotime($movie->borrow_date);
+ 
+        $date = $new_date = date("d-m-Y H:i:s", $timestamp);
+ 
+        $html.= '<tr> 
+        <td>'.$c.'</td>
+        <td>'.$post->post_title.'</td>
+        <td>'.$date.'</td>
+        <td><button class="btn btn-danger" onclick=ReturnMovie('.$user->ID.','.$movie->movie_id.',"'.$link.'")>Vrati</button></td>
+        </tr>';
+        $c = $c+1;
+    }
+    $html .='</tbody>';
+    $html .='</table>';
+ 
+    if(count($result) > 0)
+    {
+        echo $html;
+    }
+    else
+    {
+     echo "<p class='align-center'>Korisnik nije posudio film.</p>";
+    }
+
+    
+
+ die();
+}
+add_action('wp_ajax_GetUserLoans', 'GetUserLoans');   
+add_action('wp_ajax_nopriv_GetUserLoans', 'GetUserLoans');
+
 
 ?>

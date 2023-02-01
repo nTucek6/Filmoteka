@@ -132,7 +132,7 @@ function SearchTableAdmin(ajaxLink)
       }); 
 }
 
-
+/*
 function SearchTableUser(ajaxLink,user)
 {
   var search = jQuery("#search").val();
@@ -151,6 +151,35 @@ function SearchTableUser(ajaxLink,user)
          table.append(results);
       }
       }); 
+}*/
+
+
+function SetUserLoans(userId,link)
+{
+  sessionStorage.setItem('userId',userId);
+  window.location.href = link;
+}
+
+function GetUserLoans(ajaxLink)
+{
+  var id = sessionStorage.getItem('userId');
+ 
+  var table = jQuery("#table");
+
+  jQuery.ajax({
+    type:"POST",
+    url: ajaxLink, 
+    data: {
+          action:"GetUserLoans",
+          user_id:id
+        }, 
+    success:function(results){
+       table.empty();
+       table.append(results);
+       FancyTable();
+    }
+    }); 
+
 }
 
 
