@@ -143,8 +143,6 @@ return $html;
 /* ======================= provjera login ======================= */
 
 
-
-
 function is_admin_user() {
     return current_user_can( 'manage_options' );
 }

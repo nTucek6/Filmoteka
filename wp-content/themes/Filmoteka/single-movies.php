@@ -55,14 +55,10 @@ echo '</div>';
 
 <div id="addBtnBorrow" class="mt-3 container"></div>
 
-<div class="d-flex justify-content-center">
-<?php //previous_post_link( '%link', "<button class='btn btn-secondary m-1'>Previous post</button>", true ); ?>
-<?php //next_post_link( '%link', "<button class='btn btn-secondary m-1'>Next post</button>", true ); ?>
-</div>
-
 <?php
 
-if(get_current_user_id() != 0)
+//if(get_current_user_id() != 0)
+if(!is_admin_user())
 {
     echo '<script>
     jQuery(function($) {

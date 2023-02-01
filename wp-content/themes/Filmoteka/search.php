@@ -2,14 +2,29 @@
 get_header();
 
 
-$search = get_query_var("s");
-$results = SearchMovies($search);
+$search = $_GET['s'];//get_query_var("s");
+$filter = $_GET['filter'];
+
+$results = Search($search,$filter);
+$f = "";
+if($filter == "movies")
+{
+    $f = "filmova";
+}
+else if($filter == "actors")
+{
+    $f = "glumaca";
+}
+else if($filter == "awards")
+{
+    $f = "nagrade";
+}
 
 ?>
 
 <div class="container mt-3">
 
-<h1>Rezultati pretrage: <?php echo $search ?></h1>
+<h1>Rezultati pretrage <?php echo $f; ?>: <?php echo $search ?></h1>
 
 <?php
 if(!empty($results))
@@ -25,6 +40,13 @@ if(!empty($results))
         }
         echo '</div>';
     }
+}
+else
+{
+    echo '<div class="mt-3">';
+    echo '<p>Nema rezultata!</p>';
+    echo '</div>';
+
 }
 ?>
 

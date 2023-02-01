@@ -63,7 +63,6 @@ function GetButton()
   
   success:function(results){
     var btnBorrow = jQuery("#addBtnBorrow");
-    console.log(results);
     btnBorrow.empty();
     if(results == "true")
     {
