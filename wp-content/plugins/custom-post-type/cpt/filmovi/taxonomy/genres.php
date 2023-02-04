@@ -46,6 +46,7 @@
 
 /* ======================= Taxonomy for movies format ======================= */
 
+/*
 function register_taxonomy_genres_format() {
     $labels = array(
     'name' => _x( 'Žanrovi po formatu filma', 'Taxonomy General Name',
@@ -82,7 +83,7 @@ function register_taxonomy_genres_format() {
     );
     register_taxonomy( 'genres_movie_format', array( 'movies' ), $args );
     }
-    add_action( 'init', 'register_taxonomy_genres_format', 0 );
+    add_action( 'init', 'register_taxonomy_genres_format', 0 ); */
 
 
 /* ======================= Taxonomy for movies format ======================= */

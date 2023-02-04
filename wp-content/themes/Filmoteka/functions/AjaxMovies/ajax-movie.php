@@ -206,7 +206,7 @@ function GetUserLoans()
 
     $user = get_user_by('ID', $user_id);
 
-    echo '<div class="container mt-3">Korisnik: '.$user->display_name.'</div>';
+    echo '<div class="container">Korisnik: '.$user->display_name.'</div>';
 
     $html .= '<table id="tableData" class="table table-light table-hover container mt-3">';
     $html .= '<thead class="thead-light"> 
@@ -248,11 +248,10 @@ function GetUserLoans()
     }
     else
     {
-     echo "<p class='align-center'>Korisnik nije posudio film.</p>";
+     echo "<div class='container'><p>Korisnik nije posudio film.</p></div>";
     }
 
     
-
  die();
 }
 add_action('wp_ajax_GetUserLoans', 'GetUserLoans');   

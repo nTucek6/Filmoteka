@@ -20,9 +20,9 @@ function GetAwardContent()
             );
             
             $singleAward = get_posts( $args );
-
+            
             $html .= "<div class='container mt-4'>";
-            $html .= '<h3>'.$award->name.'</h3><hr>';
+            $html .= '<a href="'.get_term_link($award->slug,$award->taxonomy).'"><h3>'.$award->name.'</h3></a><hr>';
            
               foreach($singleAward as $s)
               {

@@ -112,6 +112,7 @@ function ReturnMovie(user_id,movie_id,ajaxLink)
 
 }
 
+/*
 function SearchTableAdmin(ajaxLink)
 {
   var search = jQuery("#search").val();
@@ -132,7 +133,7 @@ function SearchTableAdmin(ajaxLink)
       }); 
 }
 
-/*
+
 function SearchTableUser(ajaxLink,user)
 {
   var search = jQuery("#search").val();
@@ -179,7 +180,6 @@ function GetUserLoans(ajaxLink)
        FancyTable();
     }
     }); 
-
 }
 
 

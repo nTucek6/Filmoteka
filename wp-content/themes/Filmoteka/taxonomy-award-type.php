@@ -30,7 +30,7 @@ while ( have_posts() )
 {
 the_post();
 echo '<div class="col">';
-echo '<div class="d-flex justify-content-center mb-1"><a class="text-center" href="'.$post->guid.'"><img height="300" width="200" src="'.get_the_post_thumbnail_url().'"/>';
+echo '<div class="d-flex justify-content-center mb-1 "><a class="text-center" href="'.$post->guid.'">';
 echo '<h4>'.$post->post_title . '</h4></a></div>';
 
 echo '</div>';

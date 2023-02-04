@@ -22,27 +22,11 @@ if(true)
 
 <main>
 <?php
-/*
-if ( have_posts() )
-{
-
-while ( have_posts() )
-{
-the_post();
-echo '<div class="">';
-echo '<a class="text-center" href="'.$post->guid.'"><h4>'.$post->post_title . '</h4></a>';
-echo '</div>';
-}
-} */
 
 echo GetAwardContent();
 
 ?>
 
-<div class="d-flex justify-content-center">
-<?php previous_posts_link("<button class='btn btn-secondary m-1'>Previous</button>");  ?>
-<?php next_posts_link("<button class='btn btn-secondary m-1'>Next</button>");  ?>
-</div>
 </main>
 <?php
 get_footer();

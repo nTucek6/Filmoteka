@@ -57,7 +57,8 @@ echo '</div>';
 
 <?php
 
-//if(get_current_user_id() != 0)
+if(get_current_user_id() != 0)
+{
 if(!is_admin_user())
 {
     echo '<script>
@@ -73,6 +74,7 @@ if(!is_admin_user())
  
  </script>';
 
+}
 }
 
 ?>

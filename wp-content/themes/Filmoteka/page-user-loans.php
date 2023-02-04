@@ -2,7 +2,7 @@
 get_header();
 
 
-echo '<div id="table"></div>';
+echo '<div id="table" class="mt-3"></div>';
 
 $link = home_url().'/wp-admin/admin-ajax.php';
 echo '<script>
@@ -10,7 +10,6 @@ echo '<script>
             GetUserLoans("'.$link.'");
         });
 </script>';
-
 
 ?>
 
