@@ -1,30 +1,8 @@
 <?php
 get_header();
-
-if(false) 
-{
-    echo '<header class="masthead" style="background-image: url('. get_stylesheet_directory_uri()."/thumbnails/movies-thumbnail.jpg".')">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-            
-                <div class="post-heading">
-               
-                </div>
-            </div>
-        </div>
-    </div>
-</header>';
-}
-
 ?>
 
-
-<!-- <div class="row"> -->
 <?php
-
-//echo get_current_user_id();
 
 if ( have_posts() )
 {
@@ -37,7 +15,6 @@ echo the_content();
 }
 }
 ?>
-
 
 <?php 
 echo '<div class="col-md-4">';

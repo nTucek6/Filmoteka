@@ -3,7 +3,7 @@ get_header();
 
 if(true) 
 {
-    echo '<header class="masthead" style="background-image: url('. get_stylesheet_directory_uri()."/thumbnails/movies-thumbnail.jpg".')">
+    echo '<header class="masthead" style="background-image: url('. get_stylesheet_directory_uri()."/thumbnails/awards-thumbnail.jpg".')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
