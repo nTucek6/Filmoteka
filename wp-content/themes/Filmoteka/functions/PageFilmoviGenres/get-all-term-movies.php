@@ -56,6 +56,7 @@ function GetFilmoviContent()
               }
             }
             $html.= '</div><div class="swiper-pagination spagination swiper-button-white"></div></div></div>';
+            $html .= '<div class="container"><hr class="hrColor"></div>';
     }
 
 return $html;

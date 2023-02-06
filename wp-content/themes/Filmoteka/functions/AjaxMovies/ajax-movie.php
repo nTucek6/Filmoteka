@@ -206,49 +206,50 @@ function GetUserLoans()
 
     $user = get_user_by('ID', $user_id);
 
-    echo '<div class="container">Korisnik: '.$user->display_name.'</div>';
+    $html .= '<div class="container card" style="background-color:#2e2e2c;"><p class="text-center">Korisnik: '.$user->display_name.'</p></div>';
 
-    $html .= '<table id="tableData" class="table table-light table-hover container mt-3">';
-    $html .= '<thead class="thead-light"> 
-            <tr>
-            <th>Rbr.</th>
-            <th>Naziv filma</th>
-            <th>Datum posudbe</th>
-            <th>Vrati film</th>
-            </tr>
-            </thead>';
- 
-    $c = 1;
-
-    
-    $html .='<tbody id="tableBody">';
-    foreach($result as $movie)
-    {
-        $post = get_post( $movie->movie_id );
-        $user = get_user_by("id",$movie->user_id);
-     
-        $timestamp = strtotime($movie->borrow_date);
- 
-        $date = $new_date = date("d-m-Y H:i:s", $timestamp);
- 
-        $html.= '<tr> 
-        <td>'.$c.'</td>
-        <td>'.$post->post_title.'</td>
-        <td>'.$date.'</td>
-        <td><button class="btn btn-danger" onclick=ReturnMovie('.$user->ID.','.$movie->movie_id.',"'.$link.'")>Vrati</button></td>
-        </tr>';
-        $c = $c+1;
-    }
-    $html .='</tbody>';
-    $html .='</table>';
- 
     if(count($result) > 0)
     {
+        $html .= '<table id="tableData" class="table table-light table-hover container mt-3">';
+        $html .= '<thead class="thead-light"> 
+                <tr>
+                <th>Rbr.</th>
+                <th>Naziv filma</th>
+                <th>Datum posudbe</th>
+                <th>Vrati film</th>
+                </tr>
+                </thead>';
+     
+        $c = 1;
+    
+        $html .='<tbody id="tableBody">';
+        foreach($result as $movie)
+        {
+            $post = get_post( $movie->movie_id );
+            $user = get_user_by("id",$movie->user_id);
+         
+            $timestamp = strtotime($movie->borrow_date);
+     
+            $date = $new_date = date("d-m-Y H:i:s", $timestamp);
+     
+            $html.= '<tr> 
+            <td>'.$c.'</td>
+            <td>'.$post->post_title.'</td>
+            <td>'.$date.'</td>
+            <td><button class="btn btn-danger" onclick=ReturnMovie('.$user->ID.','.$movie->movie_id.',"'.$link.'")>Vrati</button></td>
+            </tr>';
+            $c = $c+1;
+        }
+        $html .='</tbody>';
+        $html .='</table>';
+
+
         echo $html;
     }
     else
     {
-     echo "<div class='container'><p>Korisnik nije posudio film.</p></div>";
+     $html .= '<div class="container card mt-1" style="background-color:#2e2e2c;"><p class="text-center">Korisnik nije posudio film.</p></div>';
+     echo $html;
     }
 
     

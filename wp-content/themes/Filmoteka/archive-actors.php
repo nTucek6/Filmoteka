@@ -30,8 +30,10 @@ while ( have_posts() )
 {
 the_post();
 echo '<div class="col">';
-echo '<div class="mb-4"><div class="d-flex justify-content-center mb-1"><a href="'.$post->guid.'"><img height="300" width="200" src="'.get_the_post_thumbnail_url().'"/></div>';
-echo '<h4 class="text-center">'.$post->post_title . '</h4></a></div>';
+echo '<div class="mb-4"><div class="d-flex justify-content-center mb-1"><a href="'.$post->guid.'"><img class="archive-img"  src="'.get_the_post_thumbnail_url().'"/></div>';
+echo '<h4 class="text-center archive-title">'.$post->post_title . '</h4></a></div>';
+
+//height="220" width="200"
 
 echo '</div>';
 }
@@ -39,6 +41,9 @@ echo '</div>';
 echo '</div>';
 }
 ?>
+
+
+<div class="container"><hr class="hrColor"></div>
 
 <div class="d-flex justify-content-center">
 <?php previous_posts_link("<button class='btn btn-secondary m-1'>Previous</button>");  ?>

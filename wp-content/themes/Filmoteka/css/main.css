@@ -152,7 +152,7 @@ background-color: darkred;
 
 .single-hr
 {
-    border-top: 1px solid red;
+    border-top: 1px solid white;
 }
 
 .searchwp-live-search-result >p>a
@@ -165,3 +165,55 @@ background-color: darkred;
 {
     border-top: 1px solid white;
 }
+
+.hrColor
+{
+    border-top: 1px solid white;
+}
+
+
+
+/* Css za velicine slike u archive i tamo gdje je prikaz filma po row klasi */
+
+@media only screen and (min-device-width: 600px) {
+    .archive-img
+    {
+        height: 300px;
+        width: 200px;
+    }
+    }
+
+
+    @media only screen and (max-device-width: 600px) {
+        .archive-img
+        {
+            height: 100px;
+            width: 50px;
+        }
+        .archive-title
+        {
+            font-size: 15px;
+        }
+        }
+
+    /* Css za velicine slike u archive i tamo gdje je prikaz filma po row klasi */
+
+
+    /* forma pretrage css */
+
+    @media only screen and (max-device-width: 600px) {
+
+
+        .form-margin > select
+        {
+        margin-bottom: 2px;
+        }
+        .form-margin > input
+        {
+        margin-bottom: 2px;
+        }
+    }
+    
+       /* forma pretrage css */
+
+

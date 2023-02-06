@@ -48,6 +48,8 @@ include 'functions/GetRewardArchive/reward.php'; //Funckija vraca archive reward
 
 include 'functions/GetUsers/get-users.php'; //Funckija vraca korisnike stranice
 
+include 'functions/GetAwardMovies/get-award-movies.php'; //Funckija vraca filmove odabrane nagrade
+
 
 /* ======================= Includes ======================= */
 
@@ -146,7 +148,7 @@ else
     {
         $html .= '<ul id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
             <li id="menu-navigacija" class="nav navbar-nav navigation d-flex justify-content-end menu-item-has-children dropdown menu-item-navigacija nav-item">
-        <a href="http://localhost/Filmoteka/korisnici/" data-hover="dropdown" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-78">
+        <a href="http://localhost/Filmoteka/user/" data-hover="dropdown" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-78">
         <span itemprop="name">Profil</span>
         </a>
         <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-78">
@@ -171,8 +173,6 @@ return $html;
 function is_admin_user() {
     return current_user_can( 'manage_options' );
 }
-
-
 
 
 

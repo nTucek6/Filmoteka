@@ -6,8 +6,8 @@ function GetUserMovies()
     $borrowed_movies = $wpdb->prefix."borrowed_movies";
     $result = $wpdb->get_results("Select * from ".$borrowed_movies. " where user_id=".get_current_user_id()."  ORDER BY borrow_date ASC");
 
-  //  $html = '<div class="container mt-3"><input id="search" type="text" class="form-control" placeholder="Pretraži..." onkeyup=SearchTableUser("'.$link.'",'.get_current_user_id().') /></div>'; 
-    $html .= '<table class="table table-light container mt-3" id="tableData" >';
+    $html .= '<div class="table-responsive">';
+    $html .= '<table class="table table-light container mt-3 " id="tableData" >';
     $html .= '<thead class="thead-light"> 
             <tr>
             <th>Rbr.</th>
@@ -40,6 +40,7 @@ function GetUserMovies()
     }
     $html .='</tbody>';
     $html .='</table>';
+    $html .='</div>';
 
     if(count($result) > 0)
    {
@@ -47,7 +48,7 @@ function GetUserMovies()
    }
    else
    {
-    return "<div class='container'><p class='text-center'>Korisnik nije posudio film.</p></div>";
+    return "<div class='container card mt-3' style='background-color:#2e2e2c;'><p class='text-center'>Nemate posuđeni film.</p></div>";
    }
 
 
@@ -63,7 +64,7 @@ function GetBorrowedMovies()
    $result = $wpdb->get_results("Select * from ".$borrowed_movies.' ORDER BY borrow_date ASC');
    $link = home_url().'/wp-admin/admin-ajax.php';
 
-  // $html = '<div  class="container mt-3"><input id="search" type="text" class="form-control" placeholder="Pretraži..." onkeyup=SearchTableAdmin("'.$link.'") /></div>'; 
+   $html .= '<div class="table-responsive">';
    $html .= '<table id="tableData" class="table table-light table-hover container mt-3">';
    $html .= '<thead class="thead-light"> 
            <tr>
@@ -98,6 +99,7 @@ function GetBorrowedMovies()
    }
    $html .='</tbody>';
    $html .='</table>';
+   $html .= '</div>';
 
    if(count($result) > 0)
    {
@@ -105,7 +107,7 @@ function GetBorrowedMovies()
    }
    else
    {
-    return "<div class='container'><p class='align-center'>Nitko nije posudio film.</p></div>";
+    return "<div class='container card mt-3' style='background-color:#2e2e2c;'><p class='text-center'>Nitko nije posudio film.</p></div>";
    }
 
    die();

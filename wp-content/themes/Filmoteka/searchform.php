@@ -1,6 +1,6 @@
 <form role="search" method="get" id="searchform" class="searchform form-inline" action="<?php echo home_url(); ?>" style="display:inline;">
-<div class="form-group">
-	<select name="filter" class="form-control">
+<div class="form-group form-margin">
+	<select name="filter" class="form-control ml-1">
 		<option value="all">Sve</option>
 		<option value="movies">Filmovi</option>
 		<option value="actors">Glumci</option>

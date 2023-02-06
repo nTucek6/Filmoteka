@@ -8,6 +8,7 @@ function GetUsers()
     {
         $link = home_url().'/user-loans/';
 
+        $html .= '<div class="table-responsive">';
         $html .= '<table id="tableData" class="table table-light table-hover container mt-3">';
         $html .= '<thead class="thead-light"> 
                 <tr>
@@ -37,6 +38,7 @@ function GetUsers()
         }
         $html .='</tbody>';
         $html .='</table>';
+        $html .='</div>';
     
         return $html;
     }
