@@ -1,7 +1,7 @@
 <?php
 get_header();
 
-if(true) 
+if(false) 
 {
     echo '<header class="masthead" style="background-image: url('. get_stylesheet_directory_uri()."/thumbnails/movies-thumbnail.jpg".')">
     <div class="overlay"></div>

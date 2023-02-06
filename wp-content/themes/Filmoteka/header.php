@@ -75,3 +75,5 @@ if(!is_home() && !is_category() && !is_single() && !is_archive() && get_the_post
 ?>
 
 </header>
+
+<div id="page-content">

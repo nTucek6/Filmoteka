@@ -30,7 +30,7 @@ while ( have_posts() )
 {
 the_post();
 echo '<div class="col">';
-echo '<div class="d-flex justify-content-center mb-1 "><a class="text-center" href="'.$post->guid.'">';
+echo '<div class="d-flex justify-content-center mb-1"><a class="text-center" href="'.$post->guid.'">';
 echo '<h4 class="archive-title">'.$post->post_title . '</h4></a></div>';
 
 echo '</div>';

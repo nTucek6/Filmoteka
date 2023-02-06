@@ -34,8 +34,7 @@ function GetAwardMovies($post)
         }
         if(count($result)> 0)
         {
-           // $html = '<div class="container">';
-        
+    
             $html .= '<div class="container mt-5">';
             $html .= '<div class="row row-cols-3">';
 
@@ -52,9 +51,11 @@ function GetAwardMovies($post)
             $html .= '</div>';
             $html .= '</div>';
 
-          //  $html .= '</div>';
-
             return $html;
+        }
+        else
+        {
+            return "<div class='container card mt-3' style='background-color:#2e2e2c;'><p class='text-center'>Stranica nema filmove za odabranu nagradu.</p></div>";
         }
     }
 
