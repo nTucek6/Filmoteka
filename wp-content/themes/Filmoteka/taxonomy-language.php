@@ -1,17 +1,21 @@
 <?php
 get_header();
-    echo '<header class="masthead" style="background-image: url('. get_stylesheet_directory_uri()."/thumbnails/actors-thumbnail.jpg".')">
+
+if(true) 
+{
+    echo '<header class="masthead" style="background-image: url('. get_stylesheet_directory_uri()."/thumbnails/movies-thumbnail.jpg".')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
-                    <h1>'.post_type_archive_title('',false).'</h1>
+                    <h1>'.get_queried_object()->name.'</h1>
                 </div>
             </div>
         </div>
     </div>
-</header>'; 
+</header>';
+}
 
 ?>
 
@@ -26,10 +30,8 @@ while ( have_posts() )
 {
 the_post();
 echo '<div class="col">';
-echo '<div class="mb-4"><div class="d-flex justify-content-center mb-1"><a href="'.$post->guid.'"><img class="archive-img"  src="'.get_the_post_thumbnail_url().'"/></div>';
-echo '<h4 class="text-center archive-title">'.$post->post_title . '</h4></a></div>';
-
-//height="220" width="200"
+echo '<div class="d-flex justify-content-center mb-1"><a class="text-center" href="'.$post->guid.'"><img class="archive-img" src="'.get_the_post_thumbnail_url().'"/>';
+echo '<h4 class="archive-title">'.$post->post_title . '</h4></a></div>';
 
 echo '</div>';
 }
@@ -38,9 +40,7 @@ echo '</div>';
 }
 ?>
 
-
 <div class="container"><hr class="hrColor"></div>
-
 <div class="d-flex justify-content-center">
 <?php previous_posts_link("<button class='btn btn-secondary m-1'>Previous</button>");  ?>
 <?php next_posts_link("<button class='btn btn-secondary m-1'>Next</button>");  ?>

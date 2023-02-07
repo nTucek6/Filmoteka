@@ -48,7 +48,7 @@ function GetFilmoviContent()
               foreach($movies as $movie)
               {
                 $html .='<div class="swiper-slide">';
-                $html .='<div class="img_box d-flex justify-content-center card" style="background-color:#2e2e2c;">';
+                $html .='<div class="img_box d-flex justify-content-center card h-100" style="background-color:#2e2e2c;">';
                 $html .='<a href="'.$movie->guid.'"><img src="'.get_the_post_thumbnail_url($movie->ID).'" />
                  <p class="d-flex justify-content-center"><small>'.$movie->post_title.'</small></p> </a>';
                 $html .='</div>';

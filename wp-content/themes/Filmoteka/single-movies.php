@@ -9,11 +9,9 @@ while ( have_posts() )
 {
 the_post();
 
-
 $movieInfo = GetMovieInfo($post);
 
 $stringRewards = GetRewardInfo($post);
-
 
 if(!empty($movieInfo->actors))
 {
@@ -27,6 +25,7 @@ if(get_the_post_thumbnail_url())
 {
 echo '<div class="mt-2"><img height="300" width="200" src="'.get_the_post_thumbnail_url().'"/>';
 echo '<div>'. return_term($post,'genres') ."</div>";
+echo '<div>'. return_term($post,'language') ."</div>";
 echo '</div> <br />';
 
 }
@@ -36,18 +35,24 @@ echo '</div> <br />';
 echo '<div class="container">';
 echo '<hr class="single-hr">';
 
-echo '<p>Direktor: '. $movieInfo->director.'</p>'; //dodaj funckiciju da nade direktora
+echo '<p>Direktor: '. $movieInfo->director.'</p>';
 echo '<hr class="single-hr">';
 
+if(!empty($movieInfo->budget))
+{
+  echo '<p>Budžet filma: '. $movieInfo->budget.'</p>'; 
+  echo '<hr class="single-hr">';
+}
+if(!empty($movieInfo->actors))
+{
 echo 'Glumci: '.$stringGlumci;
-
+}
 if(!empty($stringRewards))
 {
     echo '<hr class="single-hr">';
 
 echo 'Nagrade: '.$stringRewards;
 }
-
 echo '</div>';
 }
 }
@@ -71,15 +76,11 @@ if(!is_admin_user())
  jQuery(function($) {
    GetButton();
  });
- 
  </script>';
-
 }
 }
 
 ?>
-
-
 
 </main>
 <?php

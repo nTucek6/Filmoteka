@@ -1,32 +1,21 @@
 <?php
 get_header();
-
-if(false) 
-{
-    echo '<header class="masthead" style="background-image: url('. get_stylesheet_directory_uri()."/thumbnails/movies-thumbnail.jpg".')">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-            
-                <div class="post-heading">
-               
-                </div>
-            </div>
-        </div>
-    </div>
-</header>';
-}
 ?>
 <?php
 
+if(get_current_user_id() != 0)
+{
 if(is_admin_user())
 {
+
+echo '<div class="card" style="background-color:#2e2e2c;"><div class="container"><h2 class="mt-3">Posudbe </h2></div></div>';
 echo GetBorrowedMovies();
 }
 else
 {
+  echo '<div class="card" style="background-color:#2e2e2c;"><div class="container"><h2 class="mt-3">Posudbe </h2></div></div>';
   echo GetUserMovies();
+}
 }
 
 ?>

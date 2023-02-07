@@ -20,6 +20,10 @@
         {
             echo get_the_title( get_option('page_for_posts', true) )." | ".get_bloginfo('name');
         }
+        else if(is_tax())
+        {
+            echo get_queried_object()->name." | ".get_bloginfo('name');         
+        }
         else
         {
             single_cat_title();
@@ -54,24 +58,22 @@
 </nav>
 
 <?php
-if(!is_home() && !is_category() && !is_single() && !is_archive() && get_the_post_thumbnail_url(get_the_ID()) && !is_search()) // is_home() - provjerava ako je stranica post page
+/*if(!is_home() && !is_category() && !is_single() && !is_archive() && get_the_post_thumbnail_url(get_the_ID()) && !is_search()) // is_home() - provjerava ako je stranica post page
 {
-   
     echo '<header class="masthead" style="background-image: url('.get_the_post_thumbnail_url(get_the_ID()).')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
-                    <h1>'.$post->post_title.'</h1>
+                    <h1>'.get_bloginfo("name").//$post->post_title.
+                    '</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>';
-
-
-}
+} */
 ?>
 
 </header>

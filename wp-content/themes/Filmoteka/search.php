@@ -2,7 +2,7 @@
 get_header();
 
 
-$search = $_GET['s'];//get_query_var("s");
+$search = $_GET['s'];
 $filter = $_GET['filter'];
 
 $results = Search($search,$filter);
@@ -24,7 +24,9 @@ else if($filter == "awards")
 
 <div class="container mt-3">
 
-<h1>Rezultati pretrage <?php echo $f; ?>: <?php echo $search ?></h1>
+
+
+<h1>Rezultati pretrage <?php echo $f; ?>: <?php echo $search; echo " - ("; echo count($results); echo ')'; ?> </h1>
 
 <?php
 if(!empty($results))

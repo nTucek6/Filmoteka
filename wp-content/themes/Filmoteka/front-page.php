@@ -12,7 +12,7 @@ get_header();
             </div>
         </div>
     </div>
-</header>';
+</header>'; 
 
 ?>
 
@@ -26,6 +26,7 @@ get_header();
 <div class="swiper-pagination"></div>
 </div>
 </div>
+
 
 <?php 
 echo '<div class="col-md-4">';
