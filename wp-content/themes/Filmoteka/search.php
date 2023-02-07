@@ -19,12 +19,9 @@ else if($filter == "awards")
 {
     $f = "nagrade";
 }
-
 ?>
 
 <div class="container mt-3">
-
-
 
 <h1>Rezultati pretrage <?php echo $f; ?>: <?php echo $search; echo " - ("; echo count($results); echo ')'; ?> </h1>
 
